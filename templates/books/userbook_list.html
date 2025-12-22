@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Выданные книги</h2>
+<a href="{% url 'userbook_create' %}">Выдать книгу</a>
+<ul>
+    {% for ub in userbooks %}
+    <li>
+        <a href="{% url 'userbook_detail' ub.pk %}">{{ ub }}</a>
+        | <a href="{% url 'userbook_update' ub.pk %}">Изменить</a>
+        | <a href="{% url 'userbook_delete' ub.pk %}">Удалить</a>
+    </li>
+    {% empty %}
+    <li>Нет выдач</li>
+    {% endfor %}
+</ul>
+{% endblock %}

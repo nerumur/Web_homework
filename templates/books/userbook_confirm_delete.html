@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Удалить выдачу?</h2>
+<p>Вы уверены, что хотите удалить запись:</p>
+<blockquote>
+    {{ object.user.username }} → "{{ object.book.book_name }}"
+    (выдана {{ object.issue_date|date:"d.m.Y" }})
+</blockquote>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Да, удалить</button>
+</form>
+<a href="{% url 'userbook_list' %}">Нет, отмена</a>
+{% endblock %}

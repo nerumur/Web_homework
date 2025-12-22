@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ book.book_name }}</h2>
+<p>Автор: {{ book.author }}</p>
+<p>Жанр: {{ book.get_genre_type_display }}</p>
+<p>Издатель: {{ book.publisher }}</p>
+<p>Дата публикации: {{ book.publication_date }}</p>
+<a href="{% url 'book_list' %}">← Назад к списку</a>
+{% endblock %}

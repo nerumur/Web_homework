@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<h1>Добро пожаловать в библиотеку!</h1>
+<p>Здесь можно управлять книгами и выдачами.</p>
+<ul>
+    <li><a href="{% url 'book_list' %}">Список книг</a></li>
+    <li><a href="{% url 'userbook_list' %}">Список выдач</a></li>
+    <li><a href="{% url 'about' %}">О проекте</a></li>
+</ul>
+{% endblock %}

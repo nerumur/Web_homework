@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Удалить книгу "{{ object.book_name }}"?</h2>
+<form method="post">
+    {% csrf_token %}
+    <p>Вы уверены, что хотите удалить эту запись?</p>
+    <button type="submit">Да, удалить</button>
+</form>
+<a href="{% url 'book_list' %}">Нет, отмена</a>
+{% endblock %}

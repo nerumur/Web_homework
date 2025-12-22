@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Выдача книги</h2>
+<p><strong>Пользователь:</strong> {{ userbook.user.username }}</p>
+<p><strong>Книга:</strong> {{ userbook.book.book_name }} (автор: {{ userbook.book.author }})</p>
+<p><strong>Дата выдачи:</strong> {{ userbook.issue_date|date:"d.m.Y H:i" }}</p>
+{% if userbook.return_date %}
+<p><strong>Дата возврата:</strong> {{ userbook.return_date|date:"d.m.Y H:i" }}</p>
+{% else %}
+<p><strong>Дата возврата:</strong> не указана (книга не возвращена)</p>
+{% endif %}
+<a href="{% url 'userbook_list' %}">← Назад к списку выдач</a>
+{% endblock %}
